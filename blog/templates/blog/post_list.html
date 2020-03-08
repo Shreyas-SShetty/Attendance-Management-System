@@ -1,21 +1,8 @@
-{% load static %}
-<html>
-<head>
-    <title>Attendance Management System</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div>
-    <h1> (Instructors) Login to mark the attendance </h1>
-    <h2><p><u>LIST OF COURSES</u></p></h2>
-</div>
-{% for course in courses %}
-    <h2><a href="">{{ course.name }}</a></h2>
-    <h3>{{ course.course_code }}</h3>
-{% endfor %}
+{% extends 'blog/base.html' %}
 
-</body>
-</html>
+{% block content %}
+    {% for course in courses %}
+         <h2><a href="">{{ course.name }}</a></h2>
+         <h3>{{ course.course_code }}</h3>
+    {% endfor %}
+{% endblock %}
