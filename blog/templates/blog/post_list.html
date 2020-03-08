@@ -4,10 +4,13 @@
 </head>
 <body>
 <div>
-    <h1> System Interface for instructors </h1>
+    <h1> (Instructors) Login to mark the attendance </h1>
+    <h2><p><u>LIST OF COURSES</u></p></h2>
 </div>
-<div>
-    <h2> Login to mark the attendance</h2>
-</div>
+{% for course in courses %}
+    <h2><a href="">{{ course.name }}</a></h2>
+    <h3>{{ course.course_code }}</h3>
+{% endfor %}
+
 </body>
 </html>
