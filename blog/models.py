@@ -17,8 +17,8 @@ class Course(models.Model) :
 class Student(models.Model) :
     name = models.CharField(max_length=20, default='')
     rollno = models.CharField(max_length=10, unique=True, default='')
-    course_name = models.ForeignKey(Course, models.SET_NULL, blank=True, null=True)
-    email_id = models.CharField(max_length=40, default='')
+    course_name = models.ManyToManyField(Course)
+    email_id = models.EmailField(max_length=40, default='')
 
     def publish(self) :
         self.save()
