@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for course in courses %}
-         <h2><a href="">{{ course.name }}</a></h2>
+         <h2><a href="{% url 'course_detail' pk=course.pk %}">{{ course.name }}</a></h2>
          <h3>{{ course.course_code }}</h3>
     {% endfor %}
 {% endblock %}
