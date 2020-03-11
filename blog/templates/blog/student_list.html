@@ -1,0 +1,8 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+      <h1><u>Students</u></h1>
+       {% for student in course.student_set.all %}
+       <h2>{{ student.name }} - {{ student.rollno }}</h2>
+       {% endfor %}
+{% endblock %}

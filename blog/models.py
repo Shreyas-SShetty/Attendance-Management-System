@@ -36,3 +36,6 @@ class Instructor(models.Model) :
 
     def __str__(self) :
         return self.name
+
+class Attendance(models.Model) :
+    course_name = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
