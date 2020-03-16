@@ -37,5 +37,13 @@ class Instructor(models.Model) :
     def __str__(self) :
         return self.name
 
+
 class Attendance(models.Model) :
     course_name = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
+    student_name = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True)
+    instructor_name = models.ForeignKey(Instructor, on_delete=models.SET_NULL, null=True)
+    published_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta :
+        verbose_name = "attendance"
+
