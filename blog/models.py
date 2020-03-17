@@ -46,4 +46,3 @@ class Attendance(models.Model) :
 
     class Meta :
         verbose_name = "attendance"
-

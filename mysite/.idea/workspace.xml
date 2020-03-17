@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67c486bb-7e8a-434e-a91e-6d623f015fdf" name="Default Changelist" comment="" />
+    <list default="true" id="67c486bb-7e8a-434e-a91e-6d623f015fdf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/templates/blog/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/urls.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +64,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

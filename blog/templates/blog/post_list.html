@@ -2,8 +2,9 @@
 
 {% block content %}
     <ul>
+        <h3>Login required to take the attendance</h3>
         {% if user.is_authenticated %}
-        <li><h1><u><a href="{% url 'take' %}">Take attendance[login required]</a></u></h1></li>
+        <li><h1><u><a href="{% url 'take' %}">Take attendance</a></u></h1></li>
         {% endif %}
         <li><h1><u>List of Courses</u></h1></li>
     </ul>
