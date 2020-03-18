@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Course
 from .forms import PostForm
@@ -18,9 +19,10 @@ def course_detail(request, pk) :
     return render(request, 'blog/course_detail.html', {'course' : course})
 
 @login_required
-def take(request) :
-    courses = Course.objects.order_by('name')
-    return render(request, 'blog/take.html', {'courses' : courses})
+def take(request, pk) :
+    teacher = get_object_or_404(User, pk=pk)
+    clone_teacher = Instructor.objects.get(name=teacher)
+    return render(request, 'blog/take.html', {'clone_teacher' : clone_teacher})
 
 
 def student_list(request, pk) :
@@ -32,7 +34,7 @@ def student_list(request, pk) :
             # attendance.author = request.user
             attendance.published_date = timezone.now()
             attendance.save()
-            return redirect('take')
+            return redirect('post_list')
     else :
         course = get_object_or_404(Course, pk=pk)
         form = PostForm()
@@ -48,5 +50,3 @@ def register(request) :
     else :
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form' : form})
-
-

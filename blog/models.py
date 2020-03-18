@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils import timezone
 from django.conf import settings
 
@@ -28,14 +31,14 @@ class Student(models.Model) :
 
 
 class Instructor(models.Model) :
-    name = models.CharField(max_length=20, default='')
+    name = models.OneToOneField(User, on_delete=models.CASCADE)
     course_name = models.ForeignKey(Course, models.SET_NULL, blank=True, null=True)
 
     def publish(self) :
         self.save()
 
     def __str__(self) :
-        return self.name
+        return str(self.name)
 
 
 class Attendance(models.Model) :
