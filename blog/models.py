@@ -20,8 +20,8 @@ class Course(models.Model) :
 class Student(models.Model) :
     name = models.CharField(max_length=20, default='')
     rollno = models.CharField(max_length=10, unique=True, default='')
-    course_name = models.ManyToManyField(Course)
     email_id = models.EmailField(max_length=40, default='')
+    course_name = models.ManyToManyField(Course)
 
     def publish(self) :
         self.save()
@@ -43,9 +43,9 @@ class Instructor(models.Model) :
 
 class Attendance(models.Model) :
     course_name = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
-    student_name = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True)
+    student_name = models.ManyToManyField(Student)
     instructor_name = models.ForeignKey(Instructor, on_delete=models.SET_NULL, null=True)
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
 
     class Meta :
         verbose_name = "attendance"
