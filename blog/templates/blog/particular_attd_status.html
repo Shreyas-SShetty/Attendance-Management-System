@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h1>Total number of classes in {{ course.name }}-{{ attendance_count }}</h1>
+     <h2><u>Students</u></h2>
+      {% for student in course.student_set.all %}
+<h2><u><a href="{% url 'student_stat' pk1=student.pk pk2=course.pk %}">{{ student.name }}</a></u></h2>
+     {% endfor %}
+{% endblock %}

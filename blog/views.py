@@ -15,6 +15,26 @@ def post_list(request) :
     return render(request, 'blog/post_list.html', {'courses' : courses})
 
 
+def status(request) :
+    courses = Course.objects.order_by('name')
+    return render(request, 'blog/att_status.html', {'courses' : courses})
+
+
+def course_stat(request, pk) :
+    course = get_object_or_404(Course, pk=pk)
+    attendances = Attendance.objects.filter(course_name__name=course)
+    attendance_count = attendances.count()
+    return render(request, 'blog/particular_attd_status.html', {'attendances' : attendances, 'attendance_count' : attendance_count, 'course' : course})
+
+
+def student_stat(request, pk1, pk2) :
+    course = get_object_or_404(Course, pk=pk1)
+    student = get_object_or_404(Student, pk=pk2)
+    attendances = Attendance.objects.filter(course_name__name=course, student_name__name=student)
+    student_count = attendances.count()
+    return render(request, 'blog/particular_student_status.html', {'student_count' : student_count})
+
+
 def course_detail(request, pk) :
     course = get_object_or_404(Course, pk=pk)
     return render(request, 'blog/course_detail.html', {'course' : course})

@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3d916f61-5199-43a9-9a0e-4f4cd97ae4db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/post_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,10 +37,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shrey\attd\blog\templates\blog" />
       <recent name="C:\Users\shrey\attd\blog\templates\blog\" />
       <recent name="C:\Users\shrey\attd\blog\templates\registration" />
       <recent name="C:\Users\shrey\attd\blog" />
-      <recent name="C:\Users\shrey\attd\blog\templates\blog" />
       <recent name="C:\Users\shrey\attd\blog\static\css" />
     </key>
   </component>

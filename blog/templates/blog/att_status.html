@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h1><u>Select the course</u></h1>
+       <div class="container">
+      {% for course in courses %}
+      <h2><u><a href="{% url 'course_stat' pk=course.pk %}">{{ course.name }}</a></u></h2>
+      {% endfor %}
+       </div>
+{% endblock %}
