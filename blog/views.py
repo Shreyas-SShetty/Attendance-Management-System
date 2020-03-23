@@ -24,15 +24,19 @@ def course_stat(request, pk) :
     course = get_object_or_404(Course, pk=pk)
     attendances = Attendance.objects.filter(course_name__name=course)
     attendance_count = attendances.count()
-    return render(request, 'blog/particular_attd_status.html', {'attendances' : attendances, 'attendance_count' : attendance_count, 'course' : course})
+    return render(request, 'blog/particular_attd_status.html',
+                  {'attendances' : attendances, 'attendance_count' : attendance_count, 'course' : course})
 
 
 def student_stat(request, pk1, pk2) :
-    course = get_object_or_404(Course, pk=pk1)
-    student = get_object_or_404(Student, pk=pk2)
-    attendances = Attendance.objects.filter(course_name__name=course, student_name__name=student)
+    course__name = get_object_or_404(Course, pk=pk2)
+    student__name = get_object_or_404(Student, pk=pk1)
+    attendances = Attendance.objects.filter(course_name__name=course__name, student_name__name=student__name)
+    classes = Attendance.objects.filter(course_name__name=course__name)
+    class_count = ((attendances.count() * 100) / classes.count())
     student_count = attendances.count()
-    return render(request, 'blog/particular_student_status.html', {'student_count' : student_count})
+    return render(request, 'blog/particular_student_status.html',
+                  {'student_count' : student_count, 'class_count' : class_count})
 
 
 def course_detail(request, pk) :
