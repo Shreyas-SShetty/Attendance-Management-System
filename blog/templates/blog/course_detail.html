@@ -2,11 +2,9 @@
 
 {% block content %}
        <h2><u>Students enrolled in this course are</u></h2>
-       {% for subject in course.student_set.all %}
-       <h2>{{ subject.name }}</h2>
+       {% for students in course.student_set.all %}
+       <h2>{{ students.name }}</h2>
        {% endfor %}
        <h2><u>Instructors for the course</u></h2>
-       {% for subject in course.instructor_set.all %}
-       <h2>{{ subject.name }}</h2>
-       {% endfor %}
+       <h2>{{ course.instructor_name }}</h2>
 {% endblock %}

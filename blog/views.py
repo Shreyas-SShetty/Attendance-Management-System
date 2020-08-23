@@ -46,21 +46,20 @@ def course_detail(request, pk) :
 
 @login_required
 def take(request, pk) :
-    teacher = get_object_or_404(User, pk=pk)
-    clone_teacher = Instructor.objects.get(name=teacher)
-    return render(request, 'blog/take.html', {'clone_teacher' : clone_teacher})
+    user_name = get_object_or_404(User, pk=pk)
+    teacher = Instructor.objects.get(name=user_name)
+    all_courses = Course.objects.filter(instructor_name=teacher)
+    return render(request, 'blog/take.html', {'all_courses' : all_courses})
 
 
 def student_list(request, pk) :
     global course
     course = get_object_or_404(Course, pk=pk)
-    teacher = Instructor.objects.get(course_name=course)
-    # attendance = Attendance.objects.create(course_name=course, instructor_name=teacher)
     if request.method == "POST" :
         form = PostForm(request.POST, course=course)
         if form.is_valid() :
             form.instance.course_name = course
-            form.instance.instructor_name = teacher
+            form.instance.instructor_name = course.instructor_name
             form.instance.published_date = timezone.now()
             form.save()
             return redirect('post_list')

@@ -2,5 +2,7 @@
 
 {% block content %}
       <h2>Select the course for which attendance has to be taken</h2>
-      <h3><a href="{% url 'student_list' pk=clone_teacher.course_name.pk %}">{{ clone_teacher.course_name }}</a></h3>
+      {% for course in all_courses %}
+      <h3><a href="{% url 'student_list' pk=course.pk %}">{{ course }}</a></h3>
+      {% endfor %}
 {% endblock %}
