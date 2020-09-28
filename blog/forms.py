@@ -14,3 +14,4 @@ class PostForm(forms.ModelForm) :
             course = self.instance.course_name
         if course :
             self.fields['student_name'].queryset = Student.objects.filter(course_name=course)
+
