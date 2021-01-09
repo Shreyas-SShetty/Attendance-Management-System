@@ -3,6 +3,9 @@
 {% block content %}
 
 <h1>Number of classes attended - {{ student_count }}</h1>
+{% if class_count < 75 %}
 <h1><font color ="red">Your Attendance percent - {{ class_count }}</font> </h1>
-
+{% else %}
+<h1><font color ="green">Your Attendance percent - {{ class_count }}</font> </h1>
+{% endif %}
 {% endblock %}

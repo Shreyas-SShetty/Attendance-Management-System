@@ -17,10 +17,13 @@ def home_page(request) :
 @login_required
 def take(request, pk) :
     user_name = get_object_or_404(User, pk=pk)
-    teacher = Instructor.objects.get(name=user_name)
-    # can't directly assign user_name to intructor_name of course because user_name is not an instance of instructor.
-    all_courses = Course.objects.filter(instructor_name=teacher)
-    return render(request, 'blog/take.html', {'all_courses' : all_courses})
+    try :
+        # can't directly assign user_name to intructor_name of course because user_name is not an instance of instructor.
+        teacher = Instructor.objects.get(name=user_name)
+        all_courses = Course.objects.filter(instructor_name=teacher)
+        return render(request, 'blog/take.html', {'all_courses' : all_courses})
+    except Instructor.DoesNotExist :
+        return render(request, 'blog/message.html')
 
 
 def student_list(request, pk) :
@@ -78,3 +81,4 @@ def register(request) :
     else :
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form' : form})
+
