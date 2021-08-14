@@ -1,3 +1,3 @@
 # Attendance-Management-System
 
-Deployed on  http://ss788.pythonanywhere.com/
+Deployed on  https://protected-reef-39816.herokuapp.com/
