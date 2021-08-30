@@ -16,7 +16,7 @@ class Course(models.Model) :
     name = models.CharField(max_length=20, default='')
     course_code = models.CharField(max_length=10, default='')
     instructor_name = models.ForeignKey(Instructor, on_delete=models.SET_NULL, blank=True, null=True)
-# If instructor object gets deleted then the instructor option in the course option will be left blank(Can be refilled).
+# If instructor object gets deleted then the instructor option in that particular course will be left blank(Can be refilled).
 
     def __str__(self) :
         return self.name
